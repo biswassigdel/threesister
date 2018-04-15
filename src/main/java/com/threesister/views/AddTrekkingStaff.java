@@ -57,6 +57,8 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
         addTrekkingStaff = new javax.swing.JButton();
         updateStaff = new javax.swing.JButton();
         deleteStaff = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        staffId = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         staffListTable = new javax.swing.JTable();
 
@@ -95,6 +97,20 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
         });
 
         deleteStaff.setText("Delete");
+        deleteStaff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteStaffActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Id");
+
+        staffId.setEditable(false);
+        staffId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staffIdActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,34 +118,46 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(23, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(addTrekkingStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(updateStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deleteStaff, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(staffId))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(staffName)
-                            .addComponent(staffType, 0, 168, Short.MAX_VALUE)))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(staffName, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(staffType, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(addTrekkingStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(updateStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(deleteStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(staffName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(staffId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(staffName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(staffType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addTrekkingStaff)
                     .addComponent(updateStaff)
@@ -142,14 +170,14 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
 
             },
             new String [] {
-                "S.N", "Staff Name", "Post"
+                "S.N", "Staff Name", "Post", "Id"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -158,6 +186,11 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        staffListTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                staffListTableMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(staffListTable);
@@ -209,16 +242,88 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
         if ((!"".equals(name) || name != null) && (!"".equals(post) || post != null)) {
             boolean isAdded = AddStaff.addStaff(name, post);
             if (isAdded) {
-                JOptionPane.showInputDialog(null, "please provide details");
+                DefaultTableModel model = (DefaultTableModel) staffListTable.getModel();
+                model.setRowCount(0);
+                showStaff();
+                JOptionPane.showMessageDialog(null, "Staff added Sucessfully");
             }
         } else {
-            JOptionPane.showInputDialog(null, "please provide details");
+            JOptionPane.showMessageDialog(null, "Please provide details");
         }
     }//GEN-LAST:event_addTrekkingStaffActionPerformed
 
     private void updateStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStaffActionPerformed
-        // TODO add your handling code here:
+
+        int row = staffListTable.getSelectedRow();
+        int id = (int) (staffListTable.getModel().getValueAt(row, 3));
+        try {
+            Connection con = null;
+            ResultSet rs = null;
+            PreparedStatement ps = null;
+            String sql = "update Staff set StaffName=?, Post=? where id='" + id + "'";
+
+            System.out.println(sql);
+            con = DbManager.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, staffName.getText());
+
+            String post;
+            post = staffType.getSelectedItem().toString();
+            ps.setString(2, post);
+            ps.executeUpdate();
+            DefaultTableModel model = (DefaultTableModel) staffListTable.getModel();
+            model.setRowCount(0);
+            showStaff();
+            JOptionPane.showMessageDialog(null, "Staff updated Sucessfully");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_updateStaffActionPerformed
+
+    private void staffListTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffListTableMouseClicked
+        int i = staffListTable.getSelectedRow();
+
+        TableModel model = staffListTable.getModel();
+        staffName.setText(model.getValueAt(i, 1).toString());
+        String post = model.getValueAt(i, 2).toString();
+        switch (post) {
+            case "Guide":
+                staffType.setSelectedIndex(0);
+                break;
+            case "Assistant Guide":
+                staffType.setSelectedIndex(1);
+                break;
+            case "Assistant":
+                staffType.setSelectedIndex(2);
+                break;
+        }
+        staffId.setText(model.getValueAt(i, 3).toString());
+    }//GEN-LAST:event_staffListTableMouseClicked
+
+    private void staffIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_staffIdActionPerformed
+
+    private void deleteStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStaffActionPerformed
+        int row = staffListTable.getSelectedRow();
+        int id = (int) (staffListTable.getModel().getValueAt(row, 3));
+        try {
+            Connection con = null;
+            ResultSet rs = null;
+            PreparedStatement ps = null;
+            String sql = "update Staff set Deleted='Y' where id='" + id + "'";
+
+            con = DbManager.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+            DefaultTableModel model = (DefaultTableModel) staffListTable.getModel();
+            model.setRowCount(0);
+            showStaff();
+            JOptionPane.showMessageDialog(null, "Staff Deleted Sucessfully");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_deleteStaffActionPerformed
 
     public void FillCombo() {
         staffType.addItem("Guide");
@@ -233,14 +338,14 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
             ResultSet rs = null;
             PreparedStatement ps = null;
 
-            String sql = "Select * from Staff";
+            String sql = "select * from Staff where Deleted='N'";
 
             con = DbManager.getConnection();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             Staff staff;
             while (rs.next()) {
-                staff = new Staff(rs.getString("StaffName"), rs.getString("Post"));
+                staff = new Staff(rs.getInt("id"), rs.getString("StaffName"), rs.getString("Post"));
                 staffList.add(staff);
             }
         } catch (Exception e) {
@@ -258,28 +363,15 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
         staffListTable.setDefaultRenderer(String.class, centerRenderer);
         int sn = 1;
         for (int i = 0; i < list.size(); i++) {
-            Object[] row = new Object[3];
+            Object[] row = new Object[4];
             row[0] = sn++;
             row[1] = list.get(i).getName();
             row[2] = list.get(i).getPost();
+            row[3] = list.get(i).getId();
             model.addRow(row);
         }
 
     }
-//    public void StaffList() {
-//        Connection con = null;
-//        ResultSet rs = null;
-//        PreparedStatement ps = null;
-//        try {
-//            String sql = "Select * from Staff";
-//            con = DbManager.getConnection();
-//            ps = con.prepareStatement(sql);
-//            rs = ps.executeQuery();
-////            staffListTable.setModel();
-//        } catch (SQLException ex) {
-//            JOptionPane.showMessageDialog(null, ex);
-//        }
-//    }
 
     /**
      * @param args the command line arguments
@@ -321,9 +413,11 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
     private javax.swing.JButton deleteStaff;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField staffId;
     private javax.swing.JTable staffListTable;
     private javax.swing.JTextField staffName;
     private javax.swing.JComboBox<String> staffType;

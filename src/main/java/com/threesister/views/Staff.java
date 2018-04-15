@@ -10,12 +10,23 @@ package com.threesister.views;
  * @author biswas
  */
 public class Staff {
+
+    private int id;
     private String name;
     private String post;
 
-    public Staff(String name, String post) {
+    public Staff(int id, String name, String post) {
+        this.id = id;
         this.name = name;
         this.post = post;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -33,6 +44,5 @@ public class Staff {
     public void setPost(String post) {
         this.post = post;
     }
-    
-    
+
 }
