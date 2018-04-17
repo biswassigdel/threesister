@@ -71,6 +71,11 @@ public class Dashboard extends javax.swing.JFrame {
         addTrekkingArea.setForeground(java.awt.Color.white);
         addTrekkingArea.setText("Add Trekking Areas");
         addTrekkingArea.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addTrekkingArea.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addTrekkingAreaMouseClicked(evt);
+            }
+        });
 
         searchDepartureTrek.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         searchDepartureTrek.setForeground(java.awt.Color.white);
@@ -191,6 +196,12 @@ public class Dashboard extends javax.swing.JFrame {
         addTrekkingStaff.setVisible(true);
         addTrekkingStaff.setLocationRelativeTo(null);
     }//GEN-LAST:event_addTrekkingStaffMouseClicked
+
+    private void addTrekkingAreaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addTrekkingAreaMouseClicked
+        ManageTrekkingArea addPackage = new ManageTrekkingArea();
+        addPackage.setVisible(true);
+        addPackage.setLocationRelativeTo(null);
+    }//GEN-LAST:event_addTrekkingAreaMouseClicked
 
     /**
      * @param args the command line arguments
