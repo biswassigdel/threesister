@@ -16,6 +16,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import static javax.swing.GroupLayout.Alignment.CENTER;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -48,7 +49,6 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -58,13 +58,18 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
         updateStaff = new javax.swing.JButton();
         deleteStaff = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         staffId = new javax.swing.JTextField();
+        licenseNo = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        mobileNo = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        address = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         staffListTable = new javax.swing.JTable();
+        close = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         jLabel1.setText("Name");
 
@@ -105,50 +110,57 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
 
         jLabel3.setText("Id");
 
-        staffId.setEditable(false);
-        staffId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                staffIdActionPerformed(evt);
-            }
-        });
+        jLabel4.setText("License No");
+
+        jLabel5.setText("Mobile No");
+
+        jLabel6.setText("Address");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addComponent(staffId))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(39, 39, 39)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(staffName, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(staffId, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(staffName, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(staffType, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(addTrekkingStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(updateStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(deleteStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6))
+                                .addGap(22, 22, 22))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(addTrekkingStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(staffType, 0, 168, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(updateStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(deleteStaff, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(licenseNo)
+                            .addComponent(mobileNo)
+                            .addComponent(address))))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(staffId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(staffId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(staffName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -157,7 +169,19 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(staffType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(licenseNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(mobileNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addTrekkingStaff)
                     .addComponent(updateStaff)
@@ -170,14 +194,14 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
 
             },
             new String [] {
-                "S.N", "Staff Name", "Post", "Id"
+                "S.N", "Staff Name", "Post", "License No", "Mobile No", "Address", "Id"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -195,33 +219,36 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(staffListTable);
 
+        close.setText("close");
+        close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(close, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(361, 361, 361))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(99, Short.MAX_VALUE))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(close)
+                .addGap(32, 32, 32))
         );
 
         pack();
@@ -239,8 +266,14 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
         // TODO add your handling code here:
         String name = staffName.getText();
         String post = (String) staffType.getSelectedItem();
-        if ((!"".equals(name) || name != null) && (!"".equals(post) || post != null)) {
-            boolean isAdded = AddStaff.addStaff(name, post);
+        String licenseNo = this.licenseNo.getText();
+        String mobileNo = this.mobileNo.getText();
+        String address = this.address.getText();
+        if ((!"".equals(name) || name != null)
+                && (!"".equals(post) || post != null)
+                && (!"".equals(mobileNo) || mobileNo != null)
+                && (!"".equals(address) || address != null)) {
+            boolean isAdded = AddStaff.addStaff(name, post, licenseNo, mobileNo, address);
             if (isAdded) {
                 DefaultTableModel model = (DefaultTableModel) staffListTable.getModel();
                 model.setRowCount(0);
@@ -260,7 +293,7 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
             Connection con = null;
             ResultSet rs = null;
             PreparedStatement ps = null;
-            String sql = "update Staff set StaffName=?, Post=? where id='" + id + "'";
+            String sql = "update Staff set StaffName=?, Post=?, LicenseNo=?, MobileNo=?, Address=? where id='" + id + "'";
 
             System.out.println(sql);
             con = DbManager.getConnection();
@@ -270,6 +303,9 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
             String post;
             post = staffType.getSelectedItem().toString();
             ps.setString(2, post);
+            ps.setString(3, licenseNo.getText());
+            ps.setString(4, mobileNo.getText());
+            ps.setString(5, address.getText());
             ps.executeUpdate();
             DefaultTableModel model = (DefaultTableModel) staffListTable.getModel();
             model.setRowCount(0);
@@ -297,12 +333,11 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
                 staffType.setSelectedIndex(2);
                 break;
         }
-        staffId.setText(model.getValueAt(i, 3).toString());
+        licenseNo.setText(model.getValueAt(i, 3).toString());
+        mobileNo.setText(model.getValueAt(i, 4).toString());
+        address.setText(model.getValueAt(i, 5).toString());
+        staffId.setText(model.getValueAt(i, 6).toString());
     }//GEN-LAST:event_staffListTableMouseClicked
-
-    private void staffIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_staffIdActionPerformed
 
     private void deleteStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStaffActionPerformed
         int row = staffListTable.getSelectedRow();
@@ -325,6 +360,10 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_deleteStaffActionPerformed
 
+    private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_closeActionPerformed
+
     public void FillCombo() {
         staffType.addItem("Guide");
         staffType.addItem("Assistant Guide");
@@ -345,7 +384,11 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
             rs = ps.executeQuery();
             Staff staff;
             while (rs.next()) {
-                staff = new Staff(rs.getInt("id"), rs.getString("StaffName"), rs.getString("Post"));
+                staff = new Staff(rs.getInt("id"), rs.getString("StaffName"),
+                        rs.getString("Post"),
+                        rs.getString("LicenseNo"),
+                        rs.getString("MobileNo"),
+                        rs.getString("Address"));
                 staffList.add(staff);
             }
         } catch (Exception e) {
@@ -363,11 +406,14 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
         staffListTable.setDefaultRenderer(String.class, centerRenderer);
         int sn = 1;
         for (int i = 0; i < list.size(); i++) {
-            Object[] row = new Object[4];
+            Object[] row = new Object[7];
             row[0] = sn++;
             row[1] = list.get(i).getName();
             row[2] = list.get(i).getPost();
-            row[3] = list.get(i).getId();
+            row[3] = list.get(i).getLicenseNo();
+            row[4] = list.get(i).getMobileNo();
+            row[5] = list.get(i).getAddress();
+            row[6] = list.get(i).getId();
             model.addRow(row);
         }
 
@@ -410,13 +456,19 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addTrekkingStaff;
+    private javax.swing.JTextField address;
+    private javax.swing.JButton close;
     private javax.swing.JButton deleteStaff;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField licenseNo;
+    private javax.swing.JTextField mobileNo;
     private javax.swing.JTextField staffId;
     private javax.swing.JTable staffListTable;
     private javax.swing.JTextField staffName;
