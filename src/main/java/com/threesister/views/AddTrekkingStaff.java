@@ -112,6 +112,8 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
 
         jLabel4.setText("License No");
 
+        staffId.setEditable(false);
+
         jLabel5.setText("Mobile No");
 
         jLabel6.setText("Address");
@@ -288,7 +290,7 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
     private void updateStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStaffActionPerformed
 
         int row = staffListTable.getSelectedRow();
-        int id = (int) (staffListTable.getModel().getValueAt(row, 3));
+        int id = (int) (staffListTable.getModel().getValueAt(row, 6));
         try {
             Connection con = null;
             ResultSet rs = null;
@@ -318,7 +320,6 @@ public class AddTrekkingStaff extends javax.swing.JFrame {
 
     private void staffListTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffListTableMouseClicked
         int i = staffListTable.getSelectedRow();
-
         TableModel model = staffListTable.getModel();
         staffName.setText(model.getValueAt(i, 1).toString());
         String post = model.getValueAt(i, 2).toString();

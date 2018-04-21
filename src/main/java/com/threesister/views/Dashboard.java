@@ -66,6 +66,11 @@ public class Dashboard extends javax.swing.JFrame {
         addBus.setForeground(java.awt.Color.white);
         addBus.setText("Bus");
         addBus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addBus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addBusMouseClicked(evt);
+            }
+        });
 
         addTrekkingArea.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         addTrekkingArea.setForeground(java.awt.Color.white);
@@ -106,6 +111,11 @@ public class Dashboard extends javax.swing.JFrame {
         addFlight.setForeground(java.awt.Color.white);
         addFlight.setText("Flight Ticket");
         addFlight.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addFlight.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addFlightMouseClicked(evt);
+            }
+        });
 
         logout.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         logout.setForeground(java.awt.Color.white);
@@ -202,6 +212,18 @@ public class Dashboard extends javax.swing.JFrame {
         addPackage.setVisible(true);
         addPackage.setLocationRelativeTo(null);
     }//GEN-LAST:event_addTrekkingAreaMouseClicked
+
+    private void addBusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBusMouseClicked
+        ManageBus manageBus = new ManageBus();
+        manageBus.setVisible(true);
+        manageBus.setLocationRelativeTo(null);
+    }//GEN-LAST:event_addBusMouseClicked
+
+    private void addFlightMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addFlightMouseClicked
+        ManageFlightTicket manageFlightTicket = new ManageFlightTicket();
+        manageFlightTicket.setVisible(true);
+        manageFlightTicket.setLocationRelativeTo(null);
+    }//GEN-LAST:event_addFlightMouseClicked
 
     /**
      * @param args the command line arguments

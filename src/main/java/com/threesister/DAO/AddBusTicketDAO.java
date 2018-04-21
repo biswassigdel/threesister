@@ -16,25 +16,25 @@ import java.sql.Statement;
  *
  * @author biswas
  */
-public class AddStaff {
+public class AddBusTicketDAO {
 
     private static Connection con = null;
     private static Statement stmt = null;
     private static ResultSet rs = null;
     private static PreparedStatement ps = null;
 
-    public static boolean addStaff(String name, String post, String licenseNo, String mobileNo, String address) {
+    public static boolean addBusTicket(String name, String travelAgency, String issueDate, String departureDate, String ticketNumber) {
         try {
-            String sql = "INSERT INTO Staff"
-                    + "(StaffName, Post, LicenseNo, MobileNo, Address) VALUES"
+            String sql = "INSERT INTO BusTicket"
+                    + "(Name, TravelAgency, IssueDate, DepartureDate, TicketNumber) VALUES"
                     + "(?,?,?,?,?)";
             con = DbManager.getConnection();
             ps = con.prepareStatement(sql);
             ps.setString(1, name);
-            ps.setString(2, post);
-            ps.setString(3, licenseNo);
-            ps.setString(4, mobileNo);
-            ps.setString(5, address);
+            ps.setString(2, travelAgency);
+            ps.setString(3, issueDate);
+            ps.setString(4, departureDate);
+            ps.setString(5, ticketNumber);
             ps.executeUpdate();
             return true;
         } catch (SQLException ex) {

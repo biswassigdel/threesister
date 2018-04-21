@@ -53,7 +53,7 @@ public class ManageTrekkingArea extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         updateTrekkingArea = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        deleteTrekkingArea = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         trekkingAreaId = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
@@ -97,7 +97,12 @@ public class ManageTrekkingArea extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("DELETE");
+        deleteTrekkingArea.setText("DELETE");
+        deleteTrekkingArea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteTrekkingAreaActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Id");
 
@@ -142,7 +147,7 @@ public class ManageTrekkingArea extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(updateTrekkingArea, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(deleteTrekkingArea, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(61, 61, 61)
@@ -178,7 +183,7 @@ public class ManageTrekkingArea extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(updateTrekkingArea)
-                    .addComponent(jButton3))
+                    .addComponent(deleteTrekkingArea))
                 .addGap(40, 40, 40))
         );
 
@@ -329,6 +334,27 @@ public class ManageTrekkingArea extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_updateTrekkingAreaActionPerformed
 
+    private void deleteTrekkingAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteTrekkingAreaActionPerformed
+        int row = trekkingAreaTableList.getSelectedRow();
+        int id = (int) (trekkingAreaTableList.getModel().getValueAt(row, 5));
+        try {
+            Connection con = null;
+            ResultSet rs = null;
+            PreparedStatement ps = null;
+            String sql = "update TrekkingArea set Deleted='Y' where id='" + id + "'";
+
+            con = DbManager.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+            DefaultTableModel model = (DefaultTableModel) trekkingAreaTableList.getModel();
+            model.setRowCount(0);
+            showTrekkingAreas();
+            JOptionPane.showMessageDialog(null, "Trekking Area Deleted Sucessfully");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_deleteTrekkingAreaActionPerformed
+
     public ArrayList<TrekkingArea> staffList() {
         ArrayList<TrekkingArea> trekkingAreaList = new ArrayList<>();
         try {
@@ -409,10 +435,10 @@ public class ManageTrekkingArea extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton deleteTrekkingArea;
     private javax.swing.JTextField durationDay;
     private javax.swing.JTextField durationNight;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
